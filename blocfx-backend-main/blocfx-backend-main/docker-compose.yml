@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:14.0
+    environment:
+      - POSTGRES_DB=abaya_db
+      - POSTGRES_USER=nestjs
+      - POSTGRES_PASSWORD=!ChangeMe!
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+    ports:
+      - '5432:5432'
+
+
+volumes:
+  db-data: {}
